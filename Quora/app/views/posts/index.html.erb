@@ -1,0 +1,22 @@
+<h1>Welcome to Quora</h1>
+ <p>Create your new post :  <%= link_to ' New ', new_user_post_path(@user)%></p>
+<h2>This is Your all Posts</h2>
+<table>
+  <tr>
+    <th>S.no</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Published</th>
+    <th></th>
+  </tr>
+ 
+  <% @user.posts.each do |post| %>
+    <tr>
+      <td><%= post.id %></td>
+      <td><%= post.author %></td>
+      <td><%= post.body %></td>
+      <td><%= post.published_at %></td>
+      <td><%= link_to 'Show', user_post_path(@user,post) %></td>
+    </tr>
+  <% end %>
+</table>

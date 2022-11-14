@@ -1,0 +1,23 @@
+<%= render 'error'%>
+<%= form_for [@user,@user.posts.build] do |f| %>
+<div>
+    <div>
+    <strong> <%= f.label :author,"Title" %></strong> <br>
+     <%= f.text_field :author %>
+    </div>
+     <br> <br>
+    <div>
+      <strong><%= f.label :body,"Description" %></strong><br>
+    <%= f.text_area :body %>
+    </div>
+    <br>
+   <div>
+      <strong><%= f.label :published_at %></strong><br>
+    <%= f.datetime_local_field :published_at %>
+    </div>
+   
+   <br>
+    
+    <%= f.submit "Post" %>
+    </div>
+<% end %>
