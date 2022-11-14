@@ -1,0 +1,14 @@
+<% @post.comments.each do |comment| %>
+  <div>
+  <p>
+    <strong>Author:</strong>
+    <%= comment.author %>
+  </p>
+ 
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+    <%=  link_to "reply", new_user_post_comment_sub_comment_path(@user,@post,comment) %>
+  </div> <br>
+<% end %>
